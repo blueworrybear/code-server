@@ -1,0 +1,11 @@
+[http.routers]
+  [http.routers.code-router]
+    rule = "Host(`$DOMAIN`)"
+    service = "code-service"
+    [http.routers.code-router.tls]
+      certResolver = "myresolver"
+
+[http.services]
+  [http.services.code-service.loadBalancer]
+    [[http.services.code-service.loadBalancer.servers]]
+      url = "http://127.0.0.1:8080"
