@@ -10,6 +10,9 @@ RUN sudo apt-get install google-cloud-sdk -y
 RUN sudo apt -y install python3-pip
 RUN sudo apt -y install wget
 RUN sudo apt -y install gettext
+# Install Golang
+RUN sudo wget https://dl.google.com/go/go1.14.3.linux-amd64.tar.gz
+RUN sudo mv go /usr/local
 WORKDIR /usr/bin
 RUN sudo wget https://github.com/containous/traefik/releases/download/v2.2.1/traefik_v2.2.1_linux_amd64.tar.gz
 RUN sudo tar -zxvf traefik_v2.2.1_linux_amd64.tar.gz
