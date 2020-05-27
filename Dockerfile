@@ -9,6 +9,7 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 RUN sudo apt update -y
 RUN sudo apt-get install google-cloud-sdk -y
 RUN sudo apt -y install python3-pip
+RUN sudo pip3 install virtualenv
 RUN sudo apt -y install wget
 RUN sudo apt -y install gettext
 RUN sudo apt -y install nodejs
