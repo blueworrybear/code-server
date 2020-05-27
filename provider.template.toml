@@ -5,7 +5,20 @@
     [http.routers.code-router.tls]
       certResolver = "myresolver"
 
+  [http.routers.ftp-router]
+    rule = "PathPrefix(`/files`)"
+    service = "ftp-service"
+    middlewares = ["ftp-prefix"]
+
+[http.middlewares]
+  [http.middlewares.ftp-prefix.stripPrefix]
+    prefixes = ["/files"]
+    forceSlash = true
+
 [http.services]
   [http.services.code-service.loadBalancer]
     [[http.services.code-service.loadBalancer.servers]]
       url = "http://127.0.0.1:8080"
+  [http.services.ftp-service.loadBalancer]
+    [[http.services.ftp-service.loadBalancer.servers]]
+      url = "http://127.0.0.1:5900"
