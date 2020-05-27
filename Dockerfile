@@ -5,11 +5,13 @@ RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.c
     sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 RUN curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | \
     sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg  add -
+RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 RUN sudo apt update -y
 RUN sudo apt-get install google-cloud-sdk -y
 RUN sudo apt -y install python3-pip
 RUN sudo apt -y install wget
 RUN sudo apt -y install gettext
+RUN sudo apt -y install nodejs
 # Install Golang
 RUN sudo wget https://dl.google.com/go/go1.14.3.linux-amd64.tar.gz
 RUN sudo tar -xvf go1.14.3.linux-amd64.tar.gz
