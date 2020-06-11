@@ -13,6 +13,7 @@ RUN sudo pip3 install virtualenv
 RUN sudo apt -y install wget
 RUN sudo apt -y install gettext
 RUN sudo apt -y install nodejs
+RUN sudo apt -y install net-tools
 # Install Golang
 RUN sudo wget https://dl.google.com/go/go1.14.3.linux-amd64.tar.gz
 RUN sudo tar -xvf go1.14.3.linux-amd64.tar.gz
