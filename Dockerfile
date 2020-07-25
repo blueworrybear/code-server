@@ -14,6 +14,9 @@ RUN sudo apt -y install wget
 RUN sudo apt -y install gettext
 RUN sudo apt -y install nodejs
 RUN sudo apt -y install net-tools
+RUN sudo apt -y install sqlite3
+RUN sudo apt -y install zip
+RUN sudo apt -y install docker.io
 # Install Golang
 RUN sudo wget https://dl.google.com/go/go1.14.3.linux-amd64.tar.gz
 RUN sudo tar -xvf go1.14.3.linux-amd64.tar.gz
